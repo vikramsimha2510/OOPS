@@ -1,0 +1,57 @@
+
+class Device {
+    String name;
+    String status;
+
+    Device(String name, String status) {
+        this.name = name;
+        this.status = status;
+    }
+
+    public String toString() {
+        return "Device: " + name + " | Status: " + status;
+    }
+}
+
+class Laptop extends Device {
+    Laptop(String name, String status) {
+        super(name, status);
+    }
+
+    public String toString() {
+        return "Laptop - " + name + " is currently " + status;
+    }
+}
+
+class Smartphone extends Device {
+    Smartphone(String name, String status) {
+        super(name, status);
+    }
+
+    public String toString() {
+        return "Smartphone - " + name + " is " + status;
+    }
+}
+
+class Tablet extends Device {
+    Tablet(String name, String status) {
+        super(name, status);
+    }
+
+    public String toString() {
+        return "Tablet - " + name + " status: " + status;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Laptop laptop = new Laptop("Dell XPS", "On");
+        Smartphone phone = new Smartphone("iPhone 15", "Charging");
+        Tablet tablet = new Tablet("iPad Air", "Off");
+
+        // Printing objects directly calls overridden toString()
+        System.out.println(laptop);
+        System.out.println(phone);
+        System.out.println(tablet);
+    }
+}
